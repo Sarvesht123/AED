@@ -3,9 +3,7 @@
 trigger:
  branches:
  include:
- - integration
- - staging2
- - staging
+ - stage
 pr:
 - '*'
 schedules:
@@ -14,11 +12,11 @@ schedules:
  always: false
  branches:
  include:
- - production
+ - main
 pool:
  vmImage: windows-latest
 variables:
- - group: AdobeCommerce-VG
+ - group: AED-VG
 steps:
 - checkout: none
 #Script to clone and push to github
