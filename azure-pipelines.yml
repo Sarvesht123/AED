@@ -1,0 +1,39 @@
+# Created by Embitel
+# Schedule time is on UTC. Set to run at 11 PM Dubai time on Monday
+trigger:
+ branches:
+ include:
+ - integration
+ - staging2
+ - staging
+pr:
+- '*'
+schedules:
+ - cron: '00 19 * * 1'
+ displayName: Schedule Production changes on Monday at 11 PM
+ always: false
+ branches:
+ include:
+ - production
+pool:
+ vmImage: windows-latest
+variables:
+ - group: AdobeCommerce-VG
+steps:
+- checkout: none
+#Script to clone and push to github
+- script: |
+ echo "ADOGIT-URL = https://$(ADO-PAT)$(ADOGIT-URL)"
+ echo "GITHub URl = https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)"
+ echo "ADO-URL=$(ADO_URL)"
+ git clone -b $(Build.SourceBranchName) https://$(ADO-PAT)$(ADOGIT-URL)$(ADO-REPONAME)
+ cd $(ADO-REPONAME)
+ ls -l
+ pwd
+ git remote -v
+ git branch
+ echo "before remote add"
+ git remote add github https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)$(GITHUB-REPONAME)
+ git remote -v
+ git push github $(Build.SourceBranchName)
+ displayName: 'Git Clone and Push changes to GitHub '
