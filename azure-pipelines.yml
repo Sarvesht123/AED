@@ -33,4 +33,3 @@ steps:
  git remote add github https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)$(GITHUB-REPONAME)
  git remote -v
  git push github $(Build.SourceBranchName)
- displayName: 'Git Clone and Push changes to GitHub '
