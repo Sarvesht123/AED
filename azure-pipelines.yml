@@ -20,13 +20,13 @@ steps:
 - checkout: none
 #Script to clone and push to github
 - script: |
- git clone -b $(Build.SourceBranchName) https://$(ADO-PAT)$(ADOGIT-URL)$(ADO-REPONAME)
- cd $(ADO-REPONAME)
- ls -l
- pwd
- git remote -v
- git branch
- echo "before remote add"
- git remote add github https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)$(GITHUB-REPONAME)
- git remote -v
- git push github $(Build.SourceBranchName)
+    git clone -b $(Build.SourceBranchName) https://$(ADO-PAT)$(ADOGIT-URL)$(ADO-REPONAME)
+    cd $(ADO-REPONAME)
+    ls -l
+    pwd
+    git remote -v
+    git branch
+    echo "before remote add"
+    git remote add github https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)$(GITHUB-REPONAME)
+    git remote -v
+    git push github $(Build.SourceBranchName)
