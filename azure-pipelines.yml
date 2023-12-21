@@ -1,8 +1,8 @@
-# Created by Embitel
-# Schedule time is on UTC. Set to run at 11 PM Dubai time on Monday
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 trigger:
- branches:
- include:
  - stage
 pr:
 - '*'
