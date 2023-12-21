@@ -20,8 +20,8 @@ steps:
 - checkout: none
 #Script to clone and push to github
 - script: |
- echo "ADOGIT-URL = https://$(ADO-PAT)$(ADOGIT-URL)"
- echo "GITHub URl = https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)"
+ echo 'ADOGIT-URL = https://$(ADO-PAT)$(ADOGIT-URL)'
+ echo 'GITHub URl = https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)'
  echo "ADO-URL=$(ADO_URL)"
  git clone -b $(Build.SourceBranchName) https://$(ADO-PAT)$(ADOGIT-URL)$(ADO-REPONAME)
  cd $(ADO-REPONAME)
