@@ -7,12 +7,11 @@ trigger:
 pr:
 - '*'
 schedules:
- - cron: '00 19 * * 1'
- displayName: Schedule Production changes on Monday at 11 PM
- always: false
- branches:
- include:
- - main
+- cron: '0 1 * * *'
+  displayName: Daily midnight build
+  branches:
+    include:
+    - main
 pool:
  vmImage: windows-latest
 variables:
