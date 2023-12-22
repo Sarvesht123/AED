@@ -1,6 +1,5 @@
 <?php 
-/* adding comment at 22st Dec 2023 updated from test branch */
+/* adding comment at 22nd Dec 2023 updated from test branch */
 echo "Hello! Pipeline testing";
-/*ending comment*/
-/* comment added at 22st Dec 2023 updated from test branch */
+/* ending comment at 22nd Dec 2023 updated from test branch */
 ?>
