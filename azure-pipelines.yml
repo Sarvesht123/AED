@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 trigger:
  - stage
- - main
+ - prelive
 pr:
 - '*'
 schedules:
@@ -27,7 +27,6 @@ steps:
     pwd
     git remote -v
     git branch
-    echo "before remote add"
     git remote add github https://$(GITHUB-USER):$(GITHUB-PAT)$(GITHUB-URL)$(GITHUB-REPONAME)
     git remote -v
     git push github $(Build.SourceBranchName)
