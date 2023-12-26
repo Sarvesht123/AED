@@ -5,6 +5,7 @@
 trigger:
  - stage
  - prelive
+ - main
 pr:
 - '*'
 schedules:
